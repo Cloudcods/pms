@@ -24,8 +24,8 @@ useEffect(() => {
     {
       products.map((product)=>{
     return (
-    <div key="{product.id}">
-    <img src="{product.productImage}" alt="Product Image" />
+    <div key={product.id}>
+    <img src={product.productImage} alt="Product Image" />
     <h2 className="product-name">{product.productName}</h2>
     <p className="product-description">{product.productDescription}</p>
     </div>
