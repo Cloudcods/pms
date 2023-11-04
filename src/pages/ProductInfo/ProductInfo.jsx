@@ -1,0 +1,31 @@
+import { useParams } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar'
+import './ProductInfo.css'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
+export const ProductInfo = () => {
+  const {id} = useParams()
+  //store  product  data coming in object
+  const[product,setProduct]=useState({})
+  const fetchProductInfo=async()=>{
+    const response =await axios.get("https://653fe42e45bedb25bfc16911.mockapi.io/PMS/"+id)
+    setProduct(response.data)
+  }
+  useEffect(()=>{
+    fetchProductInfo()
+  },[])
+console.log(product)
+  return (
+<>
+    <Navbar/>
+      <div  className='card'>
+     <img  src={product.productImage} alt="Product Image" />
+    <h2 className="product-name">{product.productName}</h2>
+    <p className="product-description">{product.productDescription}</p>
+    <p>{product.productMaterial}</p>
+    </div>
+    </>
+  )
+}
+export default ProductInfo

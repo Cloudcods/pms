@@ -30,8 +30,7 @@ useEffect(() => {
     <img src={product.productImage} alt="Product Image" />
     <h2 className="product-name">{product.productName}</h2>
     <p className="product-description">{product.productDescription}</p>
-    {/* <a href="/product info">see more</a> */}
-    <Link to="/productInfo">see more</Link>
+    <Link to={`/productInfo/${product.id}`}>see more</Link>
     </div>
     )
     })
