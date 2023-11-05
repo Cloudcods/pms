@@ -9,7 +9,7 @@ const Home = () => {
   const [products, setProducts] = useState([])
 
   const fetchProducts =  async ()=>{
-   const response = await axios.get("https://652fbaf06c756603295d8f7f.mockapi.io/products")
+   const response = await axios.get("https://653fe42e45bedb25bfc16911.mockapi.io/PMS")
     console.log(response)
 
     setProducts(response.data)
