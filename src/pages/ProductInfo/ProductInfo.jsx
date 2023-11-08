@@ -38,6 +38,7 @@ console.log(product)
     <p className="product-description">{product.productDescription}</p>
     <p>{product.productMaterial}</p>
     <button onClick={deleteProduct}>Delete</button>
+    <button onClick={()=>navigate(`/editProduct/${id}`)}>Edit</button>
     </div>
     </>
   )
